@@ -15,14 +15,14 @@ const addButton = document.querySelector("#menu__add-button");
     divForm.appendChild(inputLabelTitleForm);
 
     inputLabelTitleForm.setAttribute('for', 'input-title');
-    inputLabelTitleForm.innerText = "Titulo nota";
+    inputLabelTitleForm.innerText = "Titulo: ";
     divForm.appendChild(inputTitleForm);
     inputTitleForm.setAttribute('id', 'input-title');
     inputTitleForm.setAttribute('maxlength',  20);
 
     divForm.appendChild(inputLabelTextForm);
     inputLabelTextForm.setAttribute('for', 'input-text');
-    inputLabelTextForm.innerText = "Descripcíon:";
+    inputLabelTextForm.innerText = "Descripcíon: ";
 
     divForm.appendChild(inputTextForm);
     inputTextForm.setAttribute('id', 'input-text');
@@ -48,18 +48,32 @@ const addButton = document.querySelector("#menu__add-button");
     header.appendChild(divForm);
     divForm.classList.add('form__add-disabled');
 
+
 const createNote = (text,description) => {
     const container = document.querySelector('main');
     const note = document.createElement('div');
     const noteTitle = document.createElement('input');
     const noteDescription = document.createElement('input');
+    const noteMenu = document.createElement('nav');
+    const noteButtonDelete = document.createElement('button');
+    const noteImgDelete = document.createElement('img');
+
+    noteButtonDelete.appendChild(noteImgDelete);
+    noteImgDelete.setAttribute('src', './images/chincheta-transp.png');
+
+    noteMenu.appendChild(noteButtonDelete);
+
+    note.appendChild(noteMenu);
+    
     noteTitle.disabled = true;
     noteTitle.value = text;
+    note.appendChild(noteTitle);
+
     noteDescription.disabled = true;
     noteDescription.value = description;
-    note.appendChild(noteTitle);
     note.appendChild(noteDescription);
     container.appendChild(note);
+    note.classList.add('main__note');
 }
     
 
@@ -89,10 +103,3 @@ buttonSaveForm.addEventListener('click', event =>{
     divForm.classList.remove('form__add')
     createNote(note.title, note.note);
 })
-
-
-
-
-
-
-

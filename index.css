@@ -61,20 +61,19 @@ body {
 }
 
 .form__add {
-  z-index: 3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 20%;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  width: 80%;
   margin-right: 161px;
   background-color: #f3f30d;
   border: 2px solid grey;
@@ -84,33 +83,87 @@ body {
   display: none;
 }
 
-.form__add input, .form__add textarea {
-  width: 80%;
+.form__add input {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
   background-color: #F5F5C8;
 }
 
 .form__add label {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   font-size: 1.2rem;
-  margin: 10px 0;
+  margin-left: 10px;
+  text-align: center;
 }
 
-.form__add #input-text {
+.form__add input ~ label {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.form__add textarea {
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+  background-color: #F5F5C8;
   height: 150px;
+  margin-bottom: 10px;
 }
 
 .form__buttons {
-  margin: 10px 0;
-  width: 80%;
-  -ms-flex-item-align: center;
-      align-self: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0  10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form__buttons button {
+  margin: 20px 0;
 }
 
 main {
-  display: fixed;
+  border: 50px solid rgba(99, 57, 9, 0.555);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+
+.main__note {
+  background-color: #f3f30d;
+  width: 25%;
+  height: 200px;
+  margin: 50px 10px;
+}
+
+.main__note nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 15%;
+}
+
+.main__note nav img {
+  width: 24px;
+  height: 24px;
 }
 /*# sourceMappingURL=index.css.map */
