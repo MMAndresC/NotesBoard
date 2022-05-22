@@ -94,7 +94,7 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  font-size: 1.2rem;
+  font-size: 28px;
   margin-left: 10px;
   text-align: center;
 }
@@ -112,6 +112,7 @@ body {
   background-color: #F5F5C8;
   height: 150px;
   margin-bottom: 10px;
+  resize: none;
 }
 
 .form__buttons {
@@ -150,20 +151,54 @@ main {
   width: 25%;
   height: 200px;
   margin: 50px 10px;
-}
-
-.main__note nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 15%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main__note nav {
+  position: relative;
+  height: 32px;
 }
 
 .main__note nav img {
   width: 24px;
   height: 24px;
+}
+
+.main__note input, .main__note textarea {
+  width: 80%;
+  margin: 3% 10%;
+  background-color: #f3f30d;
+  border: 0;
+  text-align: center;
+}
+
+.main__note input {
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.main__note textarea {
+  -webkit-box-flex: 8;
+      -ms-flex: 8;
+          flex: 8;
+  resize: none;
+}
+
+.note-nav__button-edit {
+  position: absolute;
+  right: 0;
+}
+
+.note-nav__button-remove {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 /*# sourceMappingURL=index.css.map */

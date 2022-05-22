@@ -74,7 +74,7 @@ body{
 
     label{
         flex:1;
-        font-size:1.2rem;
+        font-size:28px;//1.2rem;
         margin-left:10px;
         text-align: center;
     }
@@ -88,6 +88,7 @@ body{
         background-color: #F5F5C8;
         height:150px;
         margin-bottom:10px;
+        resize:none;
     }
 
     
@@ -120,11 +121,12 @@ main{
         width:25%;
         height:200px;
         margin: 50px 10px;
+        display:flex;
+        flex-direction: column;
 
     nav{
-        display:flex;
-        justify-content: center;
-        height: 15%;
+        position:relative;
+        height: 32px;
 
         img{
             width: 24px;
@@ -134,6 +136,44 @@ main{
         }
     }
 
+    input, textarea{
+        width: 80%;
+        margin:3% 10%;
+        background-color: rgb(243, 243, 13);
+        border:0;
+        text-align: center;
+        
+    }
+
+    input{
+        font-size:25px;
+        font-weight: bolder;
+        
+    }
+
+    textarea{
+        flex:8;
+        resize:none;
+    }
+
 }
+
+.note-nav__button{
+    
+    
+    &-edit{
+        position: absolute;
+        right:0;
+    }
+
+    &-remove{
+        position: absolute;
+        left:50%;
+        transform: translateX(-50%);
+    }
+
+}
+
+
 
 

@@ -48,21 +48,31 @@ const addButton = document.querySelector("#menu__add-button");
     header.appendChild(divForm);
     divForm.classList.add('form__add-disabled');
 
+    const createButton = (url,classButton) => {
+        const noteButton = document.createElement('button');
+        const noteImg = document.createElement('img');
+        noteButton.appendChild(noteImg);
+        noteImg.setAttribute('src', url);
+        noteButton.classList.add(classButton);
+        return noteButton;
+    }
+    
 
 const createNote = (text,description) => {
     const container = document.querySelector('main');
     const note = document.createElement('div');
     const noteTitle = document.createElement('input');
-    const noteDescription = document.createElement('input');
+    const noteDescription = document.createElement('textarea');
     const noteMenu = document.createElement('nav');
-    const noteButtonDelete = document.createElement('button');
-    const noteImgDelete = document.createElement('img');
 
-    noteButtonDelete.appendChild(noteImgDelete);
-    noteImgDelete.setAttribute('src', './images/chincheta-transp.png');
-
-    noteMenu.appendChild(noteButtonDelete);
-
+    let button = createButton('./images/chincheta-transp.png', 'note-nav__button-remove');
+    button.addEventListener('click', event =>{
+        note.remove();
+    })
+    noteMenu.appendChild(button);
+    button = createButton('./images/Edit_icon.svg','note-nav__button-edit');
+    
+    noteMenu.appendChild(button);
     note.appendChild(noteMenu);
     
     noteTitle.disabled = true;
@@ -103,3 +113,5 @@ buttonSaveForm.addEventListener('click', event =>{
     divForm.classList.remove('form__add')
     createNote(note.title, note.note);
 })
+
+
