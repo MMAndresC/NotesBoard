@@ -37,10 +37,14 @@ body{
            
         }
 
-        &-icon{
+        &-button-icon{
             width:24px;
             height:30px;
             
+        }
+
+        &-disabled{
+            display:none;
         }
     }
 
@@ -48,8 +52,6 @@ body{
 
 .container{
     height:100vh;
-    //background-image: url("./images/board.jpg");
-
 }
 
 .form__add{
@@ -57,5 +59,40 @@ body{
     display:flex;
     flex-direction:column;
     align-self: flex-end;
+    align-items:center;
+    width:20%;
     margin-right: 161px;
+    background-color: rgb(243, 243, 13);
+    border: 2px solid grey;
+
+    &-disabled{
+        display:none;
+    }
+
+    input, textarea{
+        width: 80%;
+        background-color: #F5F5C8;
+    }
+
+    label{
+        font-size:1.2rem;
+        margin:10px 0;
+    }
+
+    #input-text{
+        height:150px;    
+    }
+}
+
+.form__buttons{
+    margin:10px 0;
+    width:80%;
+    align-self: center;
+    display:flex;
+    justify-content:space-around;
+}
+
+main{
+    display:fixed;
+    
 }
